@@ -2,3 +2,16 @@ language: ruby
 rvm:
  - 3.2
 script: ruby -e 'puts ENV["MY_ENV"] || "Hello, World!"'
+deploy:
+  provider: pages:git # this differs from schibsted
+  token:
+    secure: "mUKZyJCCOPhZM0Bl9ItOzRkNp35kgOzKtKMKi0qdIOKfwSicdUcBZeU4w9/6rtOYP8oUm00fZsjy+OTZvmypjaSr5dHARL85NtVUH4obdBQJXPGP0jgUT9kLMSYMBoHJC6MlghRrlhxeSmNVpIHZk2tSOJ9AfSsoqKAonSo+dPbks3khlpSfXxJ5IGWJNmws6SSbTnHVTJMEN7NVqGNcvngXAaKy6eMA9GMfXpVeqLzD9Hsd+Yfw90RXTQuNtpUxzGDE+01pyQYR70BvPhOAP4Vxvgt18UKXt/9S+4pl60vumXxc5rRIgT82ogGK4zT+uaNScMjAC3zGOUCft6vPLHE75LhACpwC5CBebTALOIc1LG4laHiWcEx330KbYuHeAkhrKQHgAH+nDJmIVCuRqlFUTa0FbU3A+fQZkFhzdV0Ypz3TWO4OvSmjBsflmjOd0fnrp2L/g6wFQeXIx9PNZY20sygsQdNMkEsQUY1fnWf+P1L8BpWZY8bW6hpmaMtKfrNkkjKviUPlBdf0r5blIXcdKjawIFGWFmgTlU5MhOpSXtI9s1DAL91q0Wftap1CLa+HsrCf2gy1udh1/U1KyEtnRjNWu2AkNA7ELkvNIEpgltNa2inagpa3pfSh/lZjhubxzoKhYU2CTkPsGhBnw4VWDsbBwlbXhLos8hS4yhI="
+  verbose: true
+  cleanup: false
+  keep_history: true
+  url: github.com
+  local_dir: pages/
+  on:
+    branch:
+    - main
+    - deploy
