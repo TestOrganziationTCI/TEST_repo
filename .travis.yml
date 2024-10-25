@@ -10,6 +10,8 @@ deploy:
   cleanup: false
   keep_history: true
   url: github.com
+  edge:
+    branch: da_supp-1150
   local_dir: pages/
   on:
     branch:
